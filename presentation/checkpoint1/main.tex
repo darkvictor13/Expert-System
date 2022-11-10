@@ -1,3 +1,4 @@
+% 1 item é perguntar se a pessoa tem restrição
 \documentclass[12pt]{beamer}
 \usepackage{breqn}
 \usepackage[brazilian,hyperpageref]{backref}
@@ -48,7 +49,7 @@
 
 \author[Victor * Almeida *]{Victor Emanuel Almeida \and Victor Hugo Almeida Alicino}
 \title{Sistema Especialista}
-\subtitle{Alguma coisa}
+\subtitle{Financiamento de Veículos novos e seminovos}
 \date{\today}
 \institute{UNIOESTE}
 \logo{\includegraphics[height=1cm]{logo_unioeste.jpg}}
@@ -90,17 +91,57 @@
 
 \section{Introdução}
 \begin{frame}
-    \frametitle{Definições}
+    \frametitle{Proposta}
+
+    \large Implementar sistema especialista para identificar a melhor financeira para financiar carros novos e seminovos tendo como base o perfil do cliente e características do carro.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Definição Financiamento}
+    \textbf{Financiamento}: ``é o ato de uma organização, usualmente uma empresa, que ajuda a pagar um produto ou um serviço de uma pessoa, ou de outra empresa, através de doação de dinheiro ou empréstimo''\cite{financiamento}.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mercado}
     \begin{itemize}
-        \item\textbf{Financiamento}: ``é o ato de uma organização, usualmente uma empresa, que ajuda a pagar um produto ou um serviço de uma pessoa, ou de outra empresa, através de doação de dinheiro ou empréstimo''\cite{financiamento}.
+        \item Em 2021 o mercado de carros seminovos cresceu 17.8\%, 15.1 milhões de carros foram vendidos no Brasil\cite{mercado_seminovos};
+        \item Em 2021 teve redução no número de financiamentos 3.5 milhões de carros financiados\cite{financiamento_2022};
+        \item Uma boa porção dos veículos vendidos são financiados.
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Caracteristicas do Problema}
+    \frametitle{Problema}
+
+    Normalmente estabelecimentos que oferecem financiamento são licenciados por diversas instituições financeiras.
+
+    Porém cada uma possui juros e analise de crédito diferentes.
+
+    \textbf{exemplo}:
+    Bv financia para pessoas sem CNH, já o Santander não faz sem CNH\@.
+    \begin{figure}
+        \centering
+        \includegraphics[height=.25\textheight]{BV-financeira-logo.png}
+        \includegraphics[height=.29\textheight]{logo-santander-icon-4096.png}
+        \caption{Logo das financeiras}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Solução}
 
     \begin{itemize}
-        \item 
+        \item Extrair dados da especialista;
+        \begin{itemize}
+            \item Quais as instituições que realizam financiamento;
+            \item Quais características influenciam aprovar o financiamento em cada instituição;
+            \item Características que rejeitam imediatamente o financiamento;
+        \end{itemize}
+        \item Sistematizar o conhecimento através de regras;
+        \item Montar a arvore de decisão;
+        \item Implementar o Sistema Especialista;
     \end{itemize}
 
 \end{frame}
@@ -110,26 +151,23 @@
     \frametitle{Especialista}
     \begin{itemize}
         \item\textbf{Nome}: Solange Cristina de Siqueira Almeida;
-        \item\textbf{Formação}:
+        \item\textbf{Formação}: Bacharel em Administração pela UNIOESTE, pós-graduada em Marketing Digital pela UNICESUMAR\@;
+        \item\textbf{Profissão}: Administradora da Almeida Carros \url{https://almeidacarros.com.br/} e correspondente bancária certificada pelo FEBRABAN\@;
         \item\textbf{E-mail}: \url{soll30@hotmail.com}.
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Problema a ser abordado}
-\end{frame}
-
-\section{Referências}\label{Referências}
+\section{Considerações Finais}
 \begin{frame}[allowframebreaks]
     \frametitle{Referências}
     \bibliography{ref}
 \end{frame}
 
-\section{Conclusão}
 \begin{frame}
-    \frametitle{Agradecimentos}
+    \frametitle{Contatos}
     \centering
-    \Huge Obrigado pela atenção
+    \url{victor.alicino@gmail.com}
+    \url{archvictor@protonmail.com}
 \end{frame}
 
 \end{document}
