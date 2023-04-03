@@ -1,0 +1,115 @@
+--------------------------------------------------------------------------------
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    Financiamento-V1
+  -- Autores: Alicino; Almeida
+
+Operador de maior precedência: conjunção
+Fator de confiança mínimo para aceitação de regra: 50
+
+SOBRE OS ARQUIVOS
+  Arquivo original: C:\Users\victo\Documents\ExpertSINTA\Financiamento-V1.bcm
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+VARIÁVEIS
+
+  Anos de uso do veículo
+    Tipo:
+      numérica
+  Financeira
+    Valores:
+      Santander
+      BV
+      Sicredi
+      Itaú
+      Pan
+      Omni
+      Financiamento Indisponível
+    Tipo:
+      multivalorada
+  Idade do Indivíduo
+    Valores:
+      0;100
+    Tipo:
+      numérica
+  Possui CPF
+    Tipo:
+      univalorada
+  Possui RG
+    Tipo:
+      univalorada
+  Situação do Documento Pessoal
+    Valores:
+      Regular
+      Irregular
+    Tipo:
+      univalorada
+  Situação na Receita Federal
+    Valores:
+      Regular
+      Irregular
+    Tipo:
+      univalorada
+
+OBJETIVOS
+
+  Financeira
+
+REGRAS
+
+  Regra 1
+    SE Idade do Indivíduo < 18
+    ENTÃO Financeira = Financiamento Indisponível CNF 100%
+
+  Regra 2
+    SE Possui CPF = Não
+    ENTÃO Financeira = Financiamento Indisponível CNF 100%
+
+  Regra 3
+    SE Situação do Documento Pessoal = Irregular
+    OU Situação na Receita Federal = Irregular
+    ENTÃO Financeira = Financiamento Indisponível CNF 100%
+
+  Regra 4
+    SE Anos de uso do veículo >= 30
+    ENTÃO Financeira = Financiamento Indisponível CNF 100%
+
+  Regra 5
+    SE Idade do Indivíduo >= 21
+    E  Idade do Indivíduo < 30
+    ENTÃO Financeira = Omni CNF 100%
+
+  Regra 6
+    SE Anos de uso do veículo < 25
+    E  Possui CPF = Sim
+    E  Possui RG = Sim
+    ENTÃO Financeira = BV CNF 100%
+
+  Regra 7
+    SE Anos de uso do veículo < 20
+    E  Possui CPF = Sim
+    E  Possui RG = Sim
+    ENTÃO Financeira = Pan CNF 100%
+
+PERGUNTAS
+
+  Variável:Anos de uso do veículo
+     Pergunta:"Quantos anos de uso tem o veículo desejado para o financiamento?"
+  Variável:Idade do Indivíduo
+     Pergunta:"Qual a idade do indivíduo?"
+     Motivo:"Sério?
+  Variável:Possui CPF
+     Pergunta:"O indivíduo possui Cadastro de Pessoa Física?"
+  Variável:Possui RG
+     Pergunta:"O indivíduo possui Registro Geral?"
+  Variável:Situação do Documento Pessoal
+     Pergunta:"Qual a situação do Certificado de Pessoa Física do indivíduo?"
+  Variável:Situação na Receita Federal
+     Pergunta:"Qual a situação do indivíduo na Receita Federal do Brasil?"
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+--------------------------------------------------------------------------------
